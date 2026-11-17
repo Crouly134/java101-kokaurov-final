@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the bank branch!");
+        System.out.println("Welcome to the bank branch.");
 
         ClientRepository clientRepository = new InMemoryClientRepository();
         ClientService clientService = new ClientService(clientRepository);
