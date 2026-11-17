@@ -146,7 +146,7 @@
    // Плохо
    public void printHello() {
        // Выводит приветствие
-       System.out.println("Hello!");
+       System.out.println("Main!");
    }
    ```
 
