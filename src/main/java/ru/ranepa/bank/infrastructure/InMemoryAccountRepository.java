@@ -9,16 +9,23 @@ import java.util.List;
 public class InMemoryAccountRepository implements AccountRepository {
     private final List<Account> accounts = new ArrayList<>();
 
+    @Override
     public void add(Account account){
-        //TODO метод добавляет счёт в список счетов.
+        accounts.add(account);
     }
+    @Override
     public List<Account> findAll(){
-        //TODO метод возвращает все счета.
-        return null;
+        return new ArrayList<>(accounts);
     }
+    @Override
     public List<Account> findByOwner(String owner){
-        //TODO метод находит счета по владельцу.
-        return null;
+        List<Account> result = new ArrayList<>();
+        for(Account account : accounts){
+            if(account.getOwner().equalsIgnoreCase(owner)){
+                result.add(account);
+            }
+        }
+        return result;
     }
 
 }

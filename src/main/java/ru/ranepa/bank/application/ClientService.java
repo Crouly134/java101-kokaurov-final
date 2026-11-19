@@ -13,15 +13,19 @@ public class ClientService {
     }
 
     public boolean addClient(String name, String phone){
-        //TODO метод проверяет имя(пустое или нет) и добавляет клиента в репозиторий.
-        return false;
+        if(name == null || name.trim().isEmpty()){
+            return false;
+        }
+        clientRepository.add(new Client(name.trim(), phone));
+        return true;
     }
     public List<Client> findAll(){
-        //TODO возращает список клиентов из репозитория.
-        return null;
+        return clientRepository.findAll();
     }
     public Client findByName(String name){
-        //TODO метод находит клиента по имени.
-        return null;
+        if (name == null || name.trim().isEmpty()){
+            return null;
+        }
+        return clientRepository.findByName(name.trim());
     }
 }

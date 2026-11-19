@@ -9,15 +9,21 @@ import java.util.List;
 public class InMemoryClientRepository implements ClientRepository {
     private final List<Client> clients = new ArrayList<>();
 
+    @Override
     public void add(Client client){
-        //TODO Данный метод добавляет клиента в список клиентов.
+        clients.add(client);
     }
+    @Override
     public List<Client> findAll(){
-        //TODO метод возвращает список клиентов при обращение.
-        return null;
+        return new ArrayList<>(clients);
     }
+    @Override
     public Client findByName(String name){
-        //TODO метод находит определенного клиента по имени.
+        for(Client client : clients){
+            if(client.getName().equalsIgnoreCase(name)){
+                return client;
+            }
+        }
         return null;
     }
 }

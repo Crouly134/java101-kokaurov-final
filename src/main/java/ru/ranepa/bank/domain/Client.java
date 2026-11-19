@@ -12,7 +12,7 @@ public class Client {
     public String getName(){
         return name;
     }
-    public String hetPhone(){
+    public String getPhone(){
         return phone;
     }
 }

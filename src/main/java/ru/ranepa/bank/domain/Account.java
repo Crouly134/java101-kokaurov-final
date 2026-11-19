@@ -1,12 +1,14 @@
 package ru.ranepa.bank.domain;
 
-public class Account {
+public abstract class Account {
     private String number;
     private String owner;
     private double balance;
 
     public Account(String number, String owner, double balance){
-        //TODO: сохранять поля(проверки в сервисе)
+        this.number = number;
+        this.owner = owner;
+        this.balance = balance;
     }
 
     public String getNumber() {
@@ -22,4 +24,5 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+    public abstract String describe();
 }
